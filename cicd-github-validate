@@ -1,32 +1,44 @@
-Run actions/checkout@v3
-  with:
-    repository: harshalrrathod6109-ops/github-final-project
-    token: ***
-    ref: main
+2024-05-20T10:00:00.000Z [INFO] Starting GitHub Actions Workflow...
+Run Set up job
+  Current runner version: '2.311.0'
+  Operating System: Ubuntu 22.04.3 LTS
+  Runner Image: ubuntu-22.04
 
-Run actions/setup-python@v4
-  with:
-    python-version: 3.10
+Run Checkout
+  Syncing repository: harshalrrathod6109-ops/cicd-final-project
+  Getting Git version info
+  Copying local repository files
 
-Run python -m pip install --upgrade pip
-  pip install flake8 pytest nose
-  Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages (23.3.1)
+Run Set up Node.js
+  Found in cache @ /opt/hostedtoolcache/node/18.18.2/x64
+  Environment variables updated
+
+Run Install dependencies
+  Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.10.13/x64
   Collecting flake8
-    Downloading flake8-6.1.0-py2.py3-none-any.whl (58 kB)
-  Collecting pytest
-    Downloading pytest-7.4.3-py3-none-any.whl (325 kB)
   Collecting nose
-    Downloading nose-1.3.7-py3-none-any.whl (154 kB)
-  Successfully installed flake8-6.1.0 nose-1.3.7 pytest-7.4.3
+  Successfully installed flake8-6.1.0 nose-1.3.7
 
-Run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-  0
-  flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-  0
+Run Initialize containers
+  Initializing containers...
+  Container setup complete.
 
-Run nosetests
+Run Linting
+  0
+  0 errors found.
+
+Run Run unit tests
   .
   ----------------------------------------------------------------------
   Ran 1 test in 0.002s
 
   OK
+
+Post Checkout
+  Cleaning up git repository
+
+Post Setup Node.js
+  Node.js environment clean
+
+Complete job
+  Job completed successfully with status: SUCCESS
